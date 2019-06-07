@@ -1,0 +1,65 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="norton-safeweb-site-verification" content="letrdxujkunglh0t7k65mmnivdbycwh7zq49hxtnzhurkca81jybivhr72fdsqlgecpi4busrjjlosrwc80ealajcc8en-hjavdovln7i9rkg39-0miefuviosm7prtk" />
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Jquery from https://developers.google.com/speed/libraries/#ext-core -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script><title>test_ajax</title>
+  
+  </head>
+
+<style>
+</style>
+
+<body onload="update()">
+Ajax test
+
+<p id="msg"></p>
+
+<?#= console_log($view_variable); ?>
+</body>
+</html>
+
+<script>
+
+	function update()
+	
+	{
+		
+		alert("Ajax called");
+		var units_cat=document.getElementById('units_cat').value;
+		
+		var dataString 'units_cat='+ units_cat;
+		
+		$.ajax({
+			type:"post",
+			url:"ajax_php.php",
+			cache: false,
+			success:function(html){
+				$('#msg').html(html);
+				
+			}
+			
+		});
+		
+		return false;	
+	}
+	
+</script>
